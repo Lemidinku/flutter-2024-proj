@@ -110,7 +110,10 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: const Text('See All >'),
+                    child: const Text(
+                      'See All >',
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
                 ],
               ),
@@ -167,18 +170,21 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: const Color(0xFFF97350),
+        unselectedItemColor: Colors.black,
+        iconSize: 34,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
-            label: 'Orders',
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: '',
           ),
         ],
       ),
