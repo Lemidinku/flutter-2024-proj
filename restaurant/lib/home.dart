@@ -73,14 +73,26 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
               ),
               const SizedBox(height: 20),
               SizedBox(
-                height: 150,
+                height: 160,
                 child: PageView(
                   children: [
                     _buildFlashOfferCard(
                       title: 'Flash Offer',
                       description:
                           'We are here with the best deserts in Addis.',
-                      imagePath: 'assets/burger.jpg',
+                      imagePath: 'assets/kitfo.jpg',
+                    ),
+                    _buildFlashOfferCard(
+                      title: 'Flash Offer',
+                      description:
+                          'We are here with the best deserts in Addis.',
+                      imagePath: 'assets/dorowot.jpg',
+                    ),
+                    _buildFlashOfferCard(
+                      title: 'Flash Offer',
+                      description:
+                          'We are here with the best deserts in Addis.',
+                      imagePath: 'assets/shiro.jpg',
                     ),
                   ],
                 ),
@@ -179,10 +191,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
     required String imagePath,
   }) {
     return ClipRRect(
-      borderRadius: const BorderRadius.vertical(
-        top: Radius.circular(15),
-        bottom: Radius.circular(15),
-      ),
+      borderRadius: BorderRadius.circular(30),
       child: Card(
         child: Stack(
           children: [
@@ -198,8 +207,8 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Colors.black.withOpacity(0.5),
-                    Colors.transparent,
+                    const Color.fromARGB(255, 247, 179, 162).withOpacity(0.5),
+                    const Color.fromARGB(255, 240, 169, 63),
                   ],
                 ),
               ),
@@ -223,9 +232,10 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                     style: const TextStyle(color: Colors.white),
                   ),
                   const SizedBox(height: 10),
-                  ElevatedButton(
+                  TextButton(
                     onPressed: () {},
-                    child: const Text('Order >'),
+                    child: const Text('Order >',
+                        style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),
