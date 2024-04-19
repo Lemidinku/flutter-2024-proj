@@ -57,12 +57,6 @@ class _AddFoodPageState extends State<AddFoodPage> {
               fontWeight: FontWeight.bold,
               color: Colors.deepOrange),
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Navigate back to the home screen (dashboard)
-          },
-        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

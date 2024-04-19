@@ -86,13 +86,6 @@ class Orders extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Colors.deepOrange),
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Navigate back to the home screen (dashboard)
-            // Navigate back to the home screen (dashboard)
-          },
-        ),
       ),
       body: ListView.builder(
         itemCount: orders.length,
