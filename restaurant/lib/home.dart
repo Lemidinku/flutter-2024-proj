@@ -125,8 +125,16 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                     imagePath: 'assets/genfo.jpg',
                   ),
                   _buildFoodItemCard(
+                    title: 'DULET',
+                    imagePath: 'assets/dulet.jpg',
+                  ),
+                  _buildFoodItemCard(
                     title: 'KITFO',
                     imagePath: 'assets/kitfo.jpg',
+                  ),
+                  _buildFoodItemCard(
+                    title: 'TIRE SEGA',
+                    imagePath: 'assets/tire.jpg',
                   ),
                   _buildFoodItemCard(
                     title: 'SHIRO',
@@ -135,6 +143,18 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                   _buildFoodItemCard(
                     title: 'TIBS',
                     imagePath: 'assets/tibs.jpg',
+                  ),
+                  _buildFoodItemCard(
+                    title: 'CHEESE BURGER',
+                    imagePath: 'assets/cheeseburger.jpg',
+                  ),
+                  _buildFoodItemCard(
+                    title: 'PIZZA',
+                    imagePath: 'assets/pizza.jpg',
+                  ),
+                  _buildFoodItemCard(
+                    title: 'STEAK',
+                    imagePath: 'assets/steak.jpg',
                   ),
                 ],
               ),
