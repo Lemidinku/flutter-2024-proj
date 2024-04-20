@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import './welcome-screen.dart';
 
 class LoginForm extends StatelessWidget {
+  const LoginForm({super.key});
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -107,8 +108,8 @@ class LoginForm extends StatelessWidget {
                     width: 1.0, // Set border width
                   ),
                 ),
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                contentPadding: const EdgeInsets.symmetric(
+                    vertical: 10.0, horizontal: 20.0),
               ),
             ),
             const SizedBox(height: 20.0),
