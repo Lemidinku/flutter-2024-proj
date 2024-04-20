@@ -114,7 +114,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
-                childAspectRatio: 0.8,
+                childAspectRatio: 0.7,
                 children: [
                   _buildFoodItemCard(
                     title: 'DORO WOT',
@@ -150,7 +150,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                   ),
                   _buildFoodItemCard(
                     title: 'PIZZA',
-                    imagePath: 'assets/pizza.jpg',
+                    imagePath: 'assets/Pizza.jpg',
                   ),
                   _buildFoodItemCard(
                     title: 'STEAK',

@@ -114,58 +114,68 @@ class AddedFoodCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      elevation: 4.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16.0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            flex: 2,
-            child: ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
-              child: Image.asset(
-                '${addedFood.foodImage}',
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  addedFood.foodName,
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
+    return SizedBox(
+      height: 400.0,
+      child: Card(
+        color: Colors.white,
+        elevation: 4.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              flex: 3,
+              child: FractionallySizedBox(
+                heightFactor: 2.5,
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(16.0)),
+                  child: Image.asset(
+                    '${addedFood.foodImage}',
+                    fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(height: 4.0),
-                Text(
-                  'Kind: ${addedFood.foodKind}',
-                  style: TextStyle(fontSize: 16.0),
-                ),
-                Text(
-                  'Type: ${addedFood.foodType}',
-                  style: TextStyle(fontSize: 16.0),
-                ),
-                Text(
-                  'Price: ${addedFood.foodPrice}',
-                  style: TextStyle(fontSize: 16.0),
-                ),
-                Text(
-                  'Origin: ${addedFood.foodOrigin}',
-                  style: TextStyle(fontSize: 16.0),
-                ),
-              ],
+              ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: 2.0,
+            ),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    addedFood.foodName,
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 4.0),
+                  Text(
+                    'Kind: ${addedFood.foodKind}',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  Text(
+                    'Type: ${addedFood.foodType}',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  Text(
+                    'Price: ${addedFood.foodPrice}',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                  Text(
+                    'Origin: ${addedFood.foodOrigin}',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
