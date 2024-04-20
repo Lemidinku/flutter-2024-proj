@@ -34,10 +34,6 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
       appBar: AppBar(
         title: const Text('Digital Restaurant'),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.menu),
-        ),
         actions: [
           IconButton(
             onPressed: () {},
@@ -98,21 +94,14 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Today\'s Menu',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'See All >',
-                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 ],
@@ -125,7 +114,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
-                childAspectRatio: 0.8,
+                childAspectRatio: 0.7,
                 children: [
                   _buildFoodItemCard(
                     title: 'DORO WOT',
@@ -136,8 +125,16 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                     imagePath: 'assets/genfo.jpg',
                   ),
                   _buildFoodItemCard(
+                    title: 'DULET',
+                    imagePath: 'assets/dulet.jpg',
+                  ),
+                  _buildFoodItemCard(
                     title: 'KITFO',
                     imagePath: 'assets/kitfo.jpg',
+                  ),
+                  _buildFoodItemCard(
+                    title: 'TIRE SEGA',
+                    imagePath: 'assets/tire.jpg',
                   ),
                   _buildFoodItemCard(
                     title: 'SHIRO',
@@ -146,6 +143,18 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                   _buildFoodItemCard(
                     title: 'TIBS',
                     imagePath: 'assets/tibs.jpg',
+                  ),
+                  _buildFoodItemCard(
+                    title: 'CHEESE BURGER',
+                    imagePath: 'assets/cheeseburger.jpg',
+                  ),
+                  _buildFoodItemCard(
+                    title: 'PIZZA',
+                    imagePath: 'assets/Pizza.jpg',
+                  ),
+                  _buildFoodItemCard(
+                    title: 'STEAK',
+                    imagePath: 'assets/steak.jpg',
                   ),
                 ],
               ),
@@ -187,6 +196,36 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
             label: '',
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xFFF97350),
+              ),
+              child: Text(
+                'Filters',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Origin'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Fasting'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Allergies'),
+              onTap: () {},
+            ),
+          ],
+        ),
       ),
     );
   }

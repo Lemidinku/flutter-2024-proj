@@ -1,4 +1,3 @@
-import 'package:restaurant/admin/component/dashbordhome.dart';
 import 'package:flutter/material.dart';
 
 class OrderList extends StatelessWidget {
@@ -86,13 +85,6 @@ class Orders extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Colors.deepOrange),
         ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Navigate back to the home screen (dashboard)
-            // Navigate back to the home screen (dashboard)
-          },
-        ),
       ),
       body: ListView.builder(
         itemCount: orders.length,
@@ -136,7 +128,7 @@ class _OrderCardState extends State<OrderCard> {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(8.0),
-      color: Colors.white,
+
       elevation: 5, // Add elevation for box shadow
       shadowColor: Colors.grey,
       child: ListTile(

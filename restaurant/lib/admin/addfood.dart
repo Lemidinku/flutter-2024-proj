@@ -1,5 +1,3 @@
-import 'package:restaurant/admin/component/dashbordhome.dart';
-
 import 'package:flutter/material.dart';
 
 class Addpage extends StatelessWidget {
@@ -56,12 +54,6 @@ class _AddFoodPageState extends State<AddFoodPage> {
               fontSize: 30.0,
               fontWeight: FontWeight.bold,
               color: Colors.deepOrange),
-        ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            // Navigate back to the home screen (dashboard)
-          },
         ),
       ),
       body: Padding(

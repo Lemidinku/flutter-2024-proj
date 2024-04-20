@@ -6,28 +6,57 @@ import 'package:restaurant/admin/orderlist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class Dashboard extends StatelessWidget {
-  const Dashboard({super.key});
+void main() {
+  runApp(const MyApp());
+}
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Project ',
-      theme: ThemeData(primarySwatch: Colors.deepOrange),
-      home: AdminHome(),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        useMaterial3: true,
+      ),
+      home: AdminHome(title: 'Digital resturant'),
     );
   }
 }
 
-class AdminHome extends StatelessWidget {
-  const AdminHome({super.key});
+class AdminHome extends StatefulWidget {
+  const AdminHome({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<AdminHome> createState() => _AdminHomeState();
+}
+
+class _AdminHomeState extends State<AdminHome> {
+  int _selectedIndex = 0;
+
+  static List<Widget> _widgetOptions = <Widget>[
+    AddedFoodsPage(),
+    AddFoodPage(),
+    OrderList(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-        'Digital resturant',
+        widget.title,
         style: TextStyle(
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
@@ -38,7 +67,7 @@ class AdminHome extends StatelessWidget {
           padding: const EdgeInsets.all(0.0),
           child: ListView(
             padding: EdgeInsets.zero,
-            children: <Widget>[
+            children: [
               DrawerHeader(
                 decoration: BoxDecoration(
                   color: Colors.deepOrange,
@@ -57,12 +86,12 @@ class AdminHome extends StatelessWidget {
               ListTile(
                 title: Text('Dashbord',
                     style: TextStyle(fontWeight: FontWeight.bold)),
-                leading: Icon(
-                  Icons.home,
-                  color: Colors.deepOrange,
-                ),
+                selected: _selectedIndex == 0,
                 onTap: () {
-                  // Navigate to the dashboard page
+                  // Update the state of the app
+                  _onItemTapped(0);
+                  // Then close the drawer
+                  Navigator.pop(context);
                 },
               ),
               ListTile(
@@ -70,33 +99,23 @@ class AdminHome extends StatelessWidget {
                   'Add Food',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                leading: Icon(
-                  Icons.add,
-                  color: Colors.deepOrange,
-                ),
+                selected: _selectedIndex == 1,
                 onTap: () {
-                  // Navigate to the add food page
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => Addpage(),
-                    ),
-                  );
+                  // Update the state of the app
+                  _onItemTapped(1);
+                  // Then close the drawer
+                  Navigator.pop(context);
                 },
               ),
               ListTile(
                 title: Text('Order List',
                     style: TextStyle(fontWeight: FontWeight.bold)),
-                leading: Icon(
-                  Icons.delivery_dining,
-                  color: Colors.deepOrange,
-                ),
+                selected: _selectedIndex == 2,
                 onTap: () {
-                  // Navigate to the order list page
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => OrderList(),
-                    ),
-                  );
+                  // Update the state of the app
+                  _onItemTapped(2);
+                  // Then close the drawer
+                  Navigator.pop(context);
                 },
               ),
               // Add more list items for other navigable components
@@ -104,7 +123,7 @@ class AdminHome extends StatelessWidget {
           ),
         ),
       ),
-      body: AddedFoodsPage(),
+      body: _widgetOptions[_selectedIndex],
     );
   }
 }
