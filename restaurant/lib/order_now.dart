@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:restaurant/detail.dart';
+import 'package:restaurant/rating_stars.dart';
 import 'package:restaurant/selectedorder.dart';
 import 'plus_minus_input.dart';
 
@@ -163,14 +164,14 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
-                childAspectRatio: 0.7,
+                childAspectRatio: 0.65,
                 children: [
                   _buildFoodItemCard(
                       title: 'DORO WOT',
                       imagePath: 'assets/dorowot.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
@@ -178,7 +179,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                       imagePath: 'assets/genfo.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
@@ -186,7 +187,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                       imagePath: 'assets/dulet.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
@@ -194,7 +195,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                       imagePath: 'assets/kitfo.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
@@ -202,7 +203,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                       imagePath: 'assets/tire.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
@@ -210,7 +211,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                       imagePath: 'assets/shiro.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
@@ -218,7 +219,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                       imagePath: 'assets/tibs.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
@@ -226,15 +227,15 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                       imagePath: 'assets/cheeseburger.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
                       title: 'PIZZA',
-                      imagePath: 'assets/pizza.jpg',
+                      imagePath: 'assets/Pizza.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
@@ -242,7 +243,7 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                       imagePath: 'assets/steak.jpg',
                       price: '300',
                       rating: '4',
-                      kind: 'luch',
+                      kind: 'lunch',
                       type: 'nonfasting',
                       origin: 'ethiopia'),
                 ],
@@ -326,12 +327,16 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                     ),
                     Text(
                       price,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 15,
                         color: Colors.black,
                       ),
                     ),
                   ],
+                ),
+                const RatingStars(
+                  rating: 3,
+                  size: 15.0,
                 ),
                 const PlusMinusInput(),
                 Padding(

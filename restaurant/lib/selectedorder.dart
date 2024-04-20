@@ -25,7 +25,7 @@ class _SelectedOrderPageState extends State<SelectedOrderPage> {
   List<SelectedFoodItem> selectedFoods = [
     SelectedFoodItem(
       name: 'Pizza',
-      image: 'assets/pizza.jpg',
+      image: 'assets/Pizza.jpg',
       price: 10.0,
       quantity: 2,
     ),

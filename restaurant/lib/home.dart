@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant/detail.dart';
+import 'package:restaurant/rating_stars.dart';
 
 void main() {
   runApp(const MyApp());
@@ -371,15 +372,31 @@ class _RestaurantHomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Text(
+                      price,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 5),
+                // const SizedBox(height: 5),
+                const RatingStars(
+                  rating: 3,
+                  size: 15.0,
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: ElevatedButton(

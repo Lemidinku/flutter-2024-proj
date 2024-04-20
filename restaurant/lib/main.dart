@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant/admin/dashbord.dart';
 import 'package:restaurant/bottom_nav.dart';
 import 'package:restaurant/welcome-screen.dart';
 
