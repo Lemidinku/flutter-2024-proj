@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import './welcome-screen.dart';
 
 class RegistrationForm extends StatelessWidget {
+  const RegistrationForm({super.key});
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
