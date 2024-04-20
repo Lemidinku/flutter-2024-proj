@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:restaurant/detail.dart';
+import 'package:restaurant/selectedorder.dart';
 import 'plus_minus_input.dart';
 
 void main() {
@@ -131,7 +133,13 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16.0, vertical: 0),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SelectedOrderPage()),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         elevation: 3,
@@ -158,29 +166,85 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                 childAspectRatio: 0.7,
                 children: [
                   _buildFoodItemCard(
-                    title: 'DORO WOT',
-                    imagePath: 'assets/dorowot.jpg',
-                  ),
+                      title: 'DORO WOT',
+                      imagePath: 'assets/dorowot.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'GENFO',
-                    imagePath: 'assets/genfo.jpg',
-                  ),
+                      title: 'GENFO',
+                      imagePath: 'assets/genfo.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'KITFO',
-                    imagePath: 'assets/kitfo.jpg',
-                  ),
+                      title: 'DULET',
+                      imagePath: 'assets/dulet.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'SHIRO',
-                    imagePath: 'assets/shiro.jpg',
-                  ),
+                      title: 'KITFO',
+                      imagePath: 'assets/kitfo.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'TIBS',
-                    imagePath: 'assets/tibs.jpg',
-                  ),
+                      title: 'TIRE SEGA',
+                      imagePath: 'assets/tire.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'KITFO',
-                    imagePath: 'assets/kitfo.jpg',
-                  ),
+                      title: 'SHIRO',
+                      imagePath: 'assets/shiro.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
+                  _buildFoodItemCard(
+                      title: 'TIBS',
+                      imagePath: 'assets/tibs.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
+                  _buildFoodItemCard(
+                      title: 'CHEESE BURGER',
+                      imagePath: 'assets/cheeseburger.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
+                  _buildFoodItemCard(
+                      title: 'PIZZA',
+                      imagePath: 'assets/pizza.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
+                  _buildFoodItemCard(
+                      title: 'STEAK',
+                      imagePath: 'assets/steak.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                 ],
               ),
             ],
@@ -190,10 +254,14 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
     );
   }
 
-  Widget _buildFoodItemCard({
-    required String title,
-    required String imagePath,
-  }) {
+  Widget _buildFoodItemCard(
+      {required String title,
+      required String imagePath,
+      required String rating,
+      required String kind,
+      required String type,
+      required String origin,
+      required String price}) {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
@@ -215,9 +283,24 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                         top: Radius.circular(15),
                         bottom: Radius.circular(15),
                       ),
-                      child: Image.asset(
-                        imagePath,
-                        fit: BoxFit.cover,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FoodDetailPage(
+                              imagePath: imagePath,
+                              price: price,
+                              origin: origin,
+                              rating: rating,
+                              type: type,
+                              title: title,
+                              kind: kind,
+                            ),
+                          ));
+                        },
+                        child: Image.asset(
+                          imagePath,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
@@ -241,8 +324,8 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                         color: Colors.black,
                       ),
                     ),
-                    const Text(
-                      "200 ETB",
+                    Text(
+                      price,
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.black,
