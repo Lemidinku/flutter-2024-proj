@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant/detail.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,19 +16,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const OrderNowPage(),
+      home: const HomePage(),
     );
   }
 }
 
-class OrderNowPage extends StatefulWidget {
-  const OrderNowPage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<OrderNowPage> createState() => _RestaurantHomePageState();
+  State<HomePage> createState() => _RestaurantHomePageState();
 }
 
-class _RestaurantHomePageState extends State<OrderNowPage> {
+class _RestaurantHomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,45 +118,85 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                 childAspectRatio: 0.7,
                 children: [
                   _buildFoodItemCard(
-                    title: 'DORO WOT',
-                    imagePath: 'assets/dorowot.jpg',
-                  ),
+                      title: 'DORO WOT',
+                      imagePath: 'assets/dorowot.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'GENFO',
-                    imagePath: 'assets/genfo.jpg',
-                  ),
+                      title: 'GENFO',
+                      imagePath: 'assets/genfo.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'DULET',
-                    imagePath: 'assets/dulet.jpg',
-                  ),
+                      title: 'DULET',
+                      imagePath: 'assets/dulet.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'KITFO',
-                    imagePath: 'assets/kitfo.jpg',
-                  ),
+                      title: 'KITFO',
+                      imagePath: 'assets/kitfo.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'TIRE SEGA',
-                    imagePath: 'assets/tire.jpg',
-                  ),
+                      title: 'TIRE SEGA',
+                      imagePath: 'assets/tire.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'SHIRO',
-                    imagePath: 'assets/shiro.jpg',
-                  ),
+                      title: 'SHIRO',
+                      imagePath: 'assets/shiro.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'TIBS',
-                    imagePath: 'assets/tibs.jpg',
-                  ),
+                      title: 'TIBS',
+                      imagePath: 'assets/tibs.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'CHEESE BURGER',
-                    imagePath: 'assets/cheeseburger.jpg',
-                  ),
+                      title: 'CHEESE BURGER',
+                      imagePath: 'assets/cheeseburger.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'PIZZA',
-                    imagePath: 'assets/Pizza.jpg',
-                  ),
+                      title: 'PIZZA',
+                      imagePath: 'assets/pizza.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                   _buildFoodItemCard(
-                    title: 'STEAK',
-                    imagePath: 'assets/steak.jpg',
-                  ),
+                      title: 'STEAK',
+                      imagePath: 'assets/steak.jpg',
+                      price: '300',
+                      rating: '4',
+                      kind: 'luch',
+                      type: 'nonfasting',
+                      origin: 'ethiopia'),
                 ],
               ),
               const SizedBox(height: 20),
@@ -291,10 +332,14 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
     );
   }
 
-  Widget _buildFoodItemCard({
-    required String title,
-    required String imagePath,
-  }) {
+  Widget _buildFoodItemCard(
+      {required String title,
+      required String imagePath,
+      required String rating,
+      required String kind,
+      required String type,
+      required String origin,
+      required String price}) {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
@@ -316,9 +361,24 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
                         top: Radius.circular(15),
                         bottom: Radius.circular(15),
                       ),
-                      child: Image.asset(
-                        imagePath,
-                        fit: BoxFit.cover,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FoodDetailPage(
+                              imagePath: imagePath,
+                              price: price,
+                              origin: origin,
+                              rating: rating,
+                              type: type,
+                              title: title,
+                              kind: kind,
+                            ),
+                          ));
+                        },
+                        child: Image.asset(
+                          imagePath,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
