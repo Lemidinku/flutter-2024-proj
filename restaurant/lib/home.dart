@@ -183,7 +183,7 @@ class _RestaurantHomePageState extends State<HomePage> {
                       origin: 'ethiopia'),
                   _buildFoodItemCard(
                       title: 'PIZZA',
-                      imagePath: 'assets/pizza.jpg',
+                      imagePath: 'assets/Pizza.jpg',
                       price: '300',
                       rating: '4',
                       kind: 'luch',
