@@ -36,16 +36,42 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
       appBar: AppBar(
         title: const Text('Digital Restaurant'),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.menu),
-        ),
         actions: [
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.person),
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xFFF97350),
+              ),
+              child: Text(
+                'Filters',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Origin'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Fasting'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Allergies'),
+              onTap: () {},
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -160,25 +186,6 @@ class _RestaurantHomePageState extends State<OrderNowPage> {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: const Color(0xFFF97350),
-        unselectedItemColor: Colors.black,
-        iconSize: 34,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '',
-          ),
-        ],
       ),
     );
   }
