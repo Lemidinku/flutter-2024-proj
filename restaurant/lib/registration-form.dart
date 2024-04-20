@@ -158,6 +158,7 @@ class RegistrationForm extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Add navigation or form submission logic here
+                Navigator.pushNamed(context, '/entry');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF97300), // Background color

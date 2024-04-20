@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant/admin/dashbord.dart';
 import 'package:restaurant/bottom_nav.dart';
+import 'package:restaurant/welcome-screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromRGBO(239, 108, 0, 1)),
         useMaterial3: true,
       ),
-      home: BottomNav(),
+      home: WelcomePage(),
+      routes: {'/entry': (context) => BottomNav()},
     );
   }
 }

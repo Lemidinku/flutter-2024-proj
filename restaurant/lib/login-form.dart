@@ -137,6 +137,7 @@ class LoginForm extends StatelessWidget {
             const SizedBox(height: 30.0),
             ElevatedButton(
               onPressed: () {
+                Navigator.pushNamed(context, '/entry');
                 // Add navigation or form submission logic here
               },
               style: ElevatedButton.styleFrom(
